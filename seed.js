@@ -47,6 +47,9 @@ var seedUsers = function () {
 
 //please add any other fields you think we should have!
 
+//Pat and Carolyn:
+//I will use the following categories (may add more as a think of them)
+// Cardiac Arrest, Dysrythmia, Critical Care [general], RSI, Seizure, Sedation, Pressor
 var seedDrugs = function(){
     var drugs = [
         {
