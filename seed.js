@@ -51,20 +51,45 @@ var seedDrugs = function(){
     var drugs = [
         {
             name: 'Adenosine',
-            use: ['cardiac arrest', 'seizure'], // i made these up, but this is the format
-            concentration: 3,
+            use: ['Dysrhythmia'], // i made these up, but this is the format
+            concentration: 1,
             dosage: 0.1,
             doseUnit: 'mg',
-            instructions: '3mg/mL dilute to 1mg/mL'
+            instructions: 'Comes in 3mg/mL. Dilute to 1mg/mL [2ml into 4ml NS]'
         },
         {
-            name:
-            use:
-            concentration:
-            dosage:
-            doseUnit:
-            instructions: 
+            name: 'Amiodarone',
+            use: ['Dysrhythmia', 'Cardiac Arrest'],
+            concentration: 3,
+            dosage: 5,
+            doseUnit: 'mg',
+            instructions: '[Mix 150mg (3mL) + 47mL D5W. Administer over 10 min.]'
         },
+        {
+            name: 'Atropine',
+            use: ['Dysrhythmia', 'Cardiac Arrest', 'RSI'],
+            concentration: 0.1,
+            dosage: 0.02,
+            doseUnit: 'mg',
+            instructions: ''
+        },
+        {
+            name: 'Sodium Bicarbonate',
+            use: ['Cardiac Arrest', 'Critical Care'],
+            concentration: 1,
+            dosage: 1,
+            doseUnit: 'mEq',
+            instructions: ''
+        },
+        {
+            name: '',
+            use: [''],
+            concentration: ,
+            dosage: ,
+            doseUnit: '',
+            instructions: ''
+        },
+
     ];
 
     return Drugs.createAsync(drugs);
