@@ -71,7 +71,7 @@ var seedDrugs = function(){
 };
 
 function wipeDB(){
-    var models = [User, drugs];
+    var models = [User, Drugs];
     return Promise.all(models.map(function(model){ return model.find({}).remove().exec();}));
 }
 
