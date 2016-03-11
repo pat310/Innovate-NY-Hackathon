@@ -22,6 +22,7 @@ var Promise = require('bluebird');
 var chalk = require('chalk');
 var connectToDb = require('./server/db');
 var User = Promise.promisifyAll(mongoose.model('User'));
+var Drugs = Promise.promisfyAll(mongoose.model('Drugs'));
 
 var seedUsers = function () {
 
@@ -40,19 +41,60 @@ var seedUsers = function () {
 
 };
 
-connectToDb.then(function () {
-    User.findAsync({}).then(function (users) {
-        if (users.length === 0) {
-            return seedUsers();
-        } else {
-            console.log(chalk.magenta('Seems to already be user data, exiting!'));
-            process.kill(0);
-        }
-    }).then(function () {
-        console.log(chalk.green('Seed successful!'));
-        process.kill(0);
-    }).catch(function (err) {
-        console.error(err);
-        process.kill(1);
-    });
+
+//michael - doseUnit will be an enumerated field, please add if we need more
+// ['mg', 'mEq', 'g', 'mcg', 'mL', 'unit']
+
+//please add any other fields you think we should have!
+
+var seedDrugs = function(){
+    var drugs = [
+        {
+            name: 'Adenosine',
+            use: ['cardiac arrest', 'seizure'], // i made these up, but this is the format
+            concentration: 3,
+            dosage: 0.1,
+            doseUnit: 'mg',
+            instructions: '3mg/mL dilute to 1mg/mL'
+        },
+        {
+            name:
+            use:
+            concentration:
+            dosage:
+            doseUnit:
+            instructions: 
+        },
+    ];
+
+    return Drugs.createAsync(drugs);
+};
+
+function wipeDB(){
+    var models = [User, drugs];
+    return Promise.all(models.map(function(model){ return model.find({}).remove().exec();}));
+}
+
+connectToDb.then(function(){
+    console.log(chalk.green('Connected to DB'));
+    console.log(chalk.yellow('Wiping DB'));
+    return wipeDB();
+}, function(){console.log(chalk.red('Connection failed'));})
+.then(function(){
+    console.log(chalk.green('DB wiped!'));
+    console.log(chalk.yellow('Seeding Users'));
+    return seedUsers();
+}, function(){console.log(chalk.red('Failed to wipe DB!'));})
+.then(function(){
+    console.log(chalk.green('Users seeded!'));
+    console.log(chalk.yellow('Seeding Drugs'));
+    return seedDrugs();
+}, function(){console.log(chalk.red('Failed to seed Users!'));})
+.then(function(){
+    console.log(chalk.green('Drugs seeded!'));
+    process.kill(0);
+}, function(){console.log(chalk.red('Failed to seed drugs!'));})
+.catch(function(err){
+    console.error(err);
+    process.kill(1);
 });
