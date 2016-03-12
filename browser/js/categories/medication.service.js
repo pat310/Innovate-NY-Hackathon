@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('InnovateNYP')
-.factory('Medication', function(){
+.factory('Medication', function($http){
   let Medication = {};
 
   Medication.categories = [
     { name: 'Cardiac Arrest', url: 'cardiacArrest' },
-    { name: 'Dysrythmia', url: 'dysrythmia' },
+    { name: 'Dysrhythmia', url: 'dysrhythmia' },
     { name: 'Critical Care / general', url: 'criticalCare' },
     { name: 'RSI', url: 'RSI' },
     { name: 'Seizure', url: 'seizure' },
@@ -14,6 +14,20 @@ angular.module('InnovateNYP')
     { name: 'Pressor', url: 'pressor' },
     { name: 'Frequently Used', url: 'frequent' }
   ];
+
+  Medication.getAll = function(){
+    return $http.get(`/api/medications`)
+    .then(function(res){
+      return res.data;
+    })
+  }
+
+  Medication.getByUse = function(category){
+    return $http.get(`/api/medications/${category}`)
+    .then(function(res){
+      return res.data;
+    })
+  }
 
   return Medication;
 })
