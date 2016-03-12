@@ -6,7 +6,7 @@ angular.module('InnovateNYP')
     templateUrl: 'js/medications/medicationList.html',
     controller: 'MedicationListCtrl',
     resolve: {
-      medications: function($stateParams, Medication){
+      filteredMedications: function($stateParams, Medication){
         return Medication.getByUse($stateParams.category)
         .then(function(medications){
           return medications;

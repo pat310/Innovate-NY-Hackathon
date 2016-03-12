@@ -5,6 +5,14 @@ angular.module('InnovateNYP')
   $stateProvider.state('categories', {
     url: '/categories',
     templateUrl: 'js/categories/categories.html',
-    controller: 'CategoryCtrl'
+    controller: 'CategoryCtrl',
+    resolve: {
+      medications: function(Medication){
+        return Medication.getAll()
+        .then(function(medications){
+          return medications;
+        })
+      }
+    }
   });
 });
