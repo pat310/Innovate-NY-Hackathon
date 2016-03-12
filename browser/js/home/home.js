@@ -8,15 +8,3 @@ angular.module('InnovateNYP')
     controller: 'HomeCtrl'
   });
 });
-
-app.controller('HomeCtrl', function ($scope, $state) {
-
-	$scope.submitMetric = function(metric, value){
-		// use conversion factory
-		$state.go("categories")
-	}	
-
-	$scope.getWeightMetric = function(){
-		return $scope.isUS ? "lbs" : "kgs"
-	}
-});
