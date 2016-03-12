@@ -7,7 +7,6 @@ angular.module('InnovateNYP')
     controller: 'MedicationListCtrl',
     resolve: {
       medications: function($stateParams, Medication){
-        console.log('stateParams', $stateParams);
         return Medication.getByUse($stateParams.category)
         .then(function(medications){
           return medications;

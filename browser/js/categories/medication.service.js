@@ -29,5 +29,13 @@ angular.module('InnovateNYP')
     })
   }
 
+  Medication.formatCategoryName = function(categoryUrl){
+    let name;
+    Medication.categories.forEach(category => {
+      if(category.url === categoryUrl) name = category.name;
+    })
+    return name;
+  }
+
   return Medication;
 })
