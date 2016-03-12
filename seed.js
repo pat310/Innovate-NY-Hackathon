@@ -22,7 +22,7 @@ var Promise = require('bluebird');
 var chalk = require('chalk');
 var connectToDb = require('./server/db');
 var User = Promise.promisifyAll(mongoose.model('User'));
-var Drugs = Promise.promisfyAll(mongoose.model('Drugs'));
+var Medication = Promise.promisifyAll(mongoose.model('Medication'));
 
 var seedUsers = function () {
 
@@ -49,9 +49,11 @@ var seedUsers = function () {
 
 //Pat and Carolyn:
 //I will use the following categories (may add more as a think of them)
-// Cardiac Arrest, Dysrythmia, Critical Care [general], RSI, Seizure, Sedation, Pressor
-var seedDrugs = function(){
-    var drugs = [
+// Cardiac Arrest, Dysrhythmia, Critical Care [general], RSI, Seizure, Sedation, Pressor
+
+//MICHAEL: Should concentrations be an array? Could there be multiple concentrations
+var seedMedications = function(){
+    var medications = [
         {
             name: 'Adenosine',
             use: ['Dysrhythmia'], // i made these up, but this is the format
@@ -84,22 +86,22 @@ var seedDrugs = function(){
             doseUnit: 'mEq',
             instructions: ''
         },
-        {
-            name: '',
-            use: [''],
-            concentration: ,
-            dosage: ,
-            doseUnit: '',
-            instructions: ''
-        },
+        // {
+        //     name: '',
+        //     use: [''],
+        //     concentration: ,
+        //     dosage: ,
+        //     doseUnit: '',
+        //     instructions: ''
+        // },
 
     ];
 
-    return Drugs.createAsync(drugs);
+    return Medication.createAsync(medications);
 };
 
 function wipeDB(){
-    var models = [User, Drugs];
+    var models = [User, Medication];
     return Promise.all(models.map(function(model){ return model.find({}).remove().exec();}));
 }
 
@@ -115,13 +117,13 @@ connectToDb.then(function(){
 }, function(){console.log(chalk.red('Failed to wipe DB!'));})
 .then(function(){
     console.log(chalk.green('Users seeded!'));
-    console.log(chalk.yellow('Seeding Drugs'));
-    return seedDrugs();
+    console.log(chalk.yellow('Seeding Medications'));
+    return seedMedications();
 }, function(){console.log(chalk.red('Failed to seed Users!'));})
 .then(function(){
-    console.log(chalk.green('Drugs seeded!'));
+    console.log(chalk.green('Medications seeded!'));
     process.kill(0);
-}, function(){console.log(chalk.red('Failed to seed drugs!'));})
+}, function(err){console.log(chalk.red('Failed to seed medications!'), err);})
 .catch(function(err){
     console.error(err);
     process.kill(1);
