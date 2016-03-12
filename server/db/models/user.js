@@ -24,6 +24,11 @@ var schema = new mongoose.Schema({
     },
     google: {
         id: String
+    },
+    calibrationImage: {
+        url: String,
+        width: Number,
+        height: Number
     }
 });
 
