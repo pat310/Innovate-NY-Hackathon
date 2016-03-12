@@ -2,7 +2,7 @@
 angular.module('InnovateNYP')
 .controller('CalibrateCtrl', function($scope, calibrationImage, Calibrate){
 
-  $scope.calibrationImage = calibrationImage;
+  $scope.source = '../../assets/creditcard.png';
   var image = document.getElementById('img');
 
   var canvas = document.getElementById('canvas');
@@ -13,6 +13,7 @@ angular.module('InnovateNYP')
     canvas.height = image.height;
   	
     context.drawImage(image, 0, 0, image.width, image.height);
+
     $scope.averageColor = Calibrate.calcAverageColor(context, image.width, image.height, 4);
   };
   

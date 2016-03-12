@@ -20,8 +20,8 @@ angular.module('InnovateNYP')
     for (var i = 0; i < corners.length; i += 2) {
       var data = context.getImageData(corners[i],corners[i+1],1,1).data;
       pixelData.push([data[0], data[1], data[2]]);
-      // context.fillStyle = '#f00';
-      // context.fillRect(corners[i], corners[i + 1], 3, 3);
+      context.fillStyle = '#f00';
+      context.fillRect(corners[i], corners[i + 1], 3, 3);
     }
 
     return Calibrate.calculateAverage(pixelData);
@@ -37,6 +37,7 @@ angular.module('InnovateNYP')
     averages.r = Math.round(averages.r / arr.length);
     averages.g = Math.round(averages.g / arr.length);
     averages.b = Math.round(averages.b / arr.length);
+    console.log('service calculated averages', averages);
     return averages;
 	};
 
