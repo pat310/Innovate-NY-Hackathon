@@ -28,5 +28,23 @@ MedSchema
     respond(bool);
   }, 'Use must be a category');
 
+MedSchema.statics.findByUse = function(category){
+  return this.find({ use: { $elemMatch: { $eq: category }}});
+}
+
+// pageSchema.statics.findByTag = function(tag, cb) {
+//   this.find({ tags: { $elemMatch: { $eq: tag} } }, cb)
+// }
+
+// pageSchema.methods.getSimilar = function(cb) {
+//   this.constructor.find({
+//     _id: { $ne: this._id },
+//     tags: {
+//       $elemMatch: { 
+//         $in: this.tags
+//       }
+//     }
+//   }, cb)
+// }
 
 mongoose.model('Medication', MedSchema);
