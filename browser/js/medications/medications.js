@@ -4,6 +4,14 @@ angular.module('InnovateNYP')
   $stateProvider.state('medications', {
     url: '/medications/:category',
     templateUrl: 'js/medications/medicationList.html',
-    controller: 'MedicationListCtrl'
+    controller: 'MedicationListCtrl',
+    resolve: {
+      medications: function($stateParams, Medication){
+        return Medication.getByUse($stateParams.category)
+        .then(function(medications){
+          return medications;
+        })
+      }
+    }
   });
 });

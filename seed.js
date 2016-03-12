@@ -51,7 +51,7 @@ var seedUsers = function () {
 //I will use the following categories (may add more as a think of them)
 // Cardiac Arrest, Dysrhythmia, Critical Care [general], RSI, Seizure, Sedation, Pressor
 
-//MICHAEL: Should concentrations be an array? Could there be multiple concentrations
+//**MICHAEL: Should concentrations be an array? Could there be multiple concentrations
 var seedMedications = function(){
     var medications = [
         {
