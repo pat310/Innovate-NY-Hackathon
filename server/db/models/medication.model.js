@@ -34,7 +34,10 @@ MedSchema.pre('save', function(next){
   this.urlArr = this.use.map((category, idx) => {
     let catArr = category.split(' ');
     let strArr = catArr.map((word, idx) => {
-      if(idx === 0) return word.toLowerCase();
+      if(word.search(/\//gi) > -1){
+        let splitWord = word.split('/');
+        return splitWord[0].toLowerCase() + '_' + splitWord[1].toLowerCase();
+      }else if(idx === 0) return word.toLowerCase();
       else return word[0].toUpperCase() + word.slice(1, word.length);
     })
     return strArr.join('');

@@ -151,7 +151,7 @@ var seedMedications = function(){
         {
             name: 'Hypertonic Saline',
             use: ['Seizure/Neuro'],
-            concentration: 0.03,
+            concentration: 1,
             dosage: 0.5,
             doseUnit: 'mL',
             instructions: '',
