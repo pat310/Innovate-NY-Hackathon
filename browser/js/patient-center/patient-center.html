@@ -1,0 +1,86 @@
+<h1> Patient Center </h1>
+
+<md-tabs md-dynamic-height md-border-bottom>
+
+  <md-tab label="Medications">
+    <md-content class="md-padding">
+	  <md-tabs md-dynamic-height md-border-bottom>
+		<md-tab label="Medication 1">
+		  <md-content class="md-padding">
+		    <div class="medication-info" layout-wrap layout="row" layout-fill layout-align="space-between center" style="min-height:200px;">
+		      <div layout="column" flex="50" flex-sm="100" layout-align="center center">
+		        <h3>Dosage</h3>
+		        <h6> Some text about the given dosage for this medication. Now isnt this soooo interesting? </h6>
+		      </div>		      
+		      <div layout="column" flex="50" flex-sm="100" layout-align="center center">
+		        <h3>Instructions</h3>
+		        <h6> You should take exactly X pills to treat your child - not X+1 or X-1 and certainly not X+2. If you following these instructions to the T your child will be better in no time and being the little ruffian that she/he is. Now lets gets your child back in shape </h6>
+		      </div>      
+		      <div layout="column" flex="50" flex-sm="100" layout-align="center center">
+		        <h3>Common Side Effects</h3>
+		        <h6> Ugh-oh. Unfortunately medecine is not quite perfect - so beware. Make to sure to watch out for the following possible side-effects. If they become too severe call a doctor immediately and consider an alternate treatment. We are oh so sorry that your child grew a third arm - we had not considered the negative effects of radiation. Think about how well he can now play the piano however. With an extra hand nobody can rival him. </h6>
+		      </div>		      
+		      <div layout="column" flex="50" flex-sm="100" layout-align="center center">
+		        <h3>Symptoms to Watch Out For</h3>
+		        <h6> Oops sort of already dealt with that on the side effects write up. So be it. Lorum ipsum lorum ipsum - and some more good old latin. </p>
+		      </div>
+		    </div>
+
+		  </md-content>
+		</md-tab>
+		<md-tab label="Medication 2">
+		  <md-content class="md-padding">
+
+		  </md-content>
+		</md-tab>
+		<md-tab label="Medication 3">
+		  <md-content class="md-padding">
+
+		  </md-content>
+		</md-tab>
+	  </md-tabs>
+    </md-content>
+  </md-tab>
+
+  <md-tab  label="Schedule Reminders">
+    <md-content class="md-padding">
+    	<table class="table" border="1">
+    		<tr>
+    			<th>Medication</th>
+    			<th>Dose</th>
+    			<th>Last Administration</th>
+    			<th>Reminder Time</th>
+    			<th>Administered?</th>
+    		</tr>    		
+    		<tr>
+    			<td>Something Scary</td>
+    			<td>.25mg/kg</td>
+    			<td>13/03/16 - 7:00AM</td>
+    			<td>13/03/16 - 7:00PM</td>
+    			<td><md-checkbox ng-model="fildInLater" aria-label="Checkbox 1"></md-checkbox></td>    		
+    		</tr>    		
+    		<tr>
+    			<td>Chocolate I Swear</td>
+    			<td>10g/kg</td>
+    			<td>13/03/16 - 12:00PM</td>
+    			<td>13/03/16 - 1:00PM</td>
+    			<td><md-checkbox ng-model="fildInLater" aria-label="Checkbox 1"></md-checkbox></td>    		
+    		</tr>
+    	</table>
+    </md-content>
+  </md-tab>
+
+  <md-tab label="Upcoming Appointments">
+    <md-content class="md-padding">
+			<md-list ng-cloak>
+			  <md-list-item class="md-3-line" ng-repeat="appointment in appointmentInfo">
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ appointment.event }}</h3>
+            <h4>{{ appointment.time }}</h4>
+            <p>{{ appointment.location }}</p>
+          </div>
+        </md-list-item>
+			</md-list>
+    </md-content>
+  </md-tab>
+</md-tabs>

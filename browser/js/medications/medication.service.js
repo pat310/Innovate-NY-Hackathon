@@ -7,7 +7,7 @@ angular.module('InnovateNYP')
   Medication.categories = [
     { name: 'Cardiac Arrest', url: 'cardiacArrest' },
     { name: 'Dysrhythmia', url: 'dysrhythmia' },
-    { name: 'Critical Care / general', url: 'criticalCare' },
+    { name: 'Critical Care / General', url: 'criticalCare' },
     { name: 'RSI', url: 'RSI' },
     { name: 'Seizure', url: 'seizure' },
     { name: 'Sedation', url: 'sedation' },
@@ -35,6 +35,13 @@ angular.module('InnovateNYP')
       if(category.url === categoryUrl) name = category.name;
     })
     return name;
+  }
+
+  Medication.getOne = function(id){
+    return $http.get(`/api/medications/details/${id}`)
+    .then(function(res){
+      return res.data;
+    })
   }
 
   return Medication;
