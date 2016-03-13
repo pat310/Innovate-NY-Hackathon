@@ -7,4 +7,6 @@ module.exports = router;
 
 router.use(controller.ensureAuthenticated);
 
+router.post('/', controller.addUser);
+
 router.get('/:id/calibrationimage', controller.getCalibrationImage);
