@@ -1,3 +1,14 @@
-Here on the calibrate page
-<img id="img" ng-src="{{source}}"/>
-<canvas id="canvas"></canvas>
+<md-button class="md-raised md-primary" ng-if="selectPicture">Take Picture</md-button>
+<md-button class="md-raised md-primary" ng-click="loadPicture()" ng-if="selectPicture">Load Picture</md-button>
+
+<md-button class="md-raised md-primary" ng-if="!selectPicture" ng-click="analyzeAutomatically()">Analyze Automatically</md-button>
+
+<div layout="row" layout-sm="column" layout-align="space-around" ng-if="showLoader">
+  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<canvas id="canvas" ng-class="{crosshair: !selectPicture}" ng-click="colorSelected($event)"></canvas>
+<div ng-if="!selectPicture">
+	Selected Color:
+	<div class="color-swatch" ng-style="backgroundColor">
+	</div>
+</div>
