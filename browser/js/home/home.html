@@ -1,109 +1,56 @@
 <section id="home" class="container-fluid" layout-align="center center">
   <md-content layout-align="center center" layout-fill layout="column">
-    <div layout-align="center center">
-      <h2 class="subtitle">Select Units:</h2>
-      <md-button class="md-raised md-primary" ng-click="toggleUnits('US')" ng-class="{active: isUs == 'US'}">US</md-button>
-      <md-button class="md-raised md-primary" ng-click="toggleUnits('SI')" ng-class="{active: isUs == 'SI'}">SI</md-button>
-    </div>
-    
-    <div layout-lg="column">
-    <div layout-align="center center" layout-sm="column">
-      <h2 class="subtitle">Enter Weight:</h2>
-        <md-input-container md-no-float layout-align="center center">
-          <input ng-model="weight" 
-                 placeholder="Weight ({{getWeightMetric()}})"
-                 type="number"/>
-          <md-button class="md-raised md-secondary" ng-click="submitMetric('weight', weight)">Enter</md-button>
-        </md-input-container>
-    </div>
-
-    <div layout="row" layout-align="center center">
-      <h4>OR</h4>
-    </div>
-
-    <div layout-align="center center" layout-sm="column">
-      <h2 class="subtitle">Enter Age:</h2>
-      <md-input-container md-no-float layout-align="center center" layout="row">
-        <input ng-model="age" 
-                 placeholder="Age ({{isMonths ? 'months' : 'years'}})"
-                 type="number"/>
-      </md-input-container>
-      <div layout="row" layout-align="center center">
-      <md-button class="md-raised md-secondary" ng-click="submitMetric('age', age)">Enter</md-button>
-      <md-switch ng-model="isMonths" aria-label="Switch 1">
-        {{isMonths ? "months" : "years"}}
-      </md-switch>
-    </div>
-    </div>
-  </div>
-
-    <div layout="row" layout-align="center center">
-      <h4>OR</h4>
-    </div>
-
-    <div layout-align="center center">
-     <h2 class="subtitle">Calculate Weight:</h2>
-      <div layout="row" layout-align="center center">
-        <md-button>
-          <ng-md-icon icon="photo_camera" size="48px"></ng-md-icon>
-        </md-button>
-      </div>  
-      </div>
+    <md-card bg-white block layout-padding>
+      <form>
+        <div layout-align="center center">
+          <h2 class="subtitle">Select Units:</h2>
+          <md-button class="md-raised md-primary" ng-click="toggleUnits('US')" ng-class="{active: isUs === 'US'}">US</md-button>
+          <md-button class="md-raised md-primary" ng-click="toggleUnits('SI')" ng-class="{active: isUs === 'SI'}">SI</md-button>
+        </div>
+        <div layout-align="center center" layout-fill layout-padding class="weight">
+          <md-input-container md-no-float flex-gt-lg>
+            <h2 class="subtitle">Enter Weight:</h2>
+            <span layout="row" layout-align="center center">
+              <input ng-model="weight" 
+                       placeholder="Weight ({{getWeightMetric()}})"
+                       type="number"/>
+              <md-button class="md-raised md-secondary" ng-click="submitMetric('weight', weight)">Enter</md-button>
+            </span>
+          </md-input-container>
+        </div>
+        <div layout="row" layout-align="center center">
+          <h4>OR</h4>
+        </div>
+        <div layout-align="center center" layout-fill layout-padding class="weight">
+          <md-input-container md-no-float flex-gt-lg>
+            <span layout="row" layout-align="center center">
+              <h2 class="subtitle switch">Enter Age:</h2>
+              <md-switch ng-model="isYears" aria-label="Switch 1">
+                {{isYears ? "years" : "months"}}
+              </md-switch>
+            </span>
+            <span layout="row">
+              <input ng-model="age" 
+                     placeholder="Age ({{isYears ? 'years' : 'months'}})"
+                     type="number"/>
+              <md-button class="md-raised md-secondary" layout-align="right center" ng-click="submitMetric('age', age)">Enter</md-button>
+            </span>
+          </md-input-container>
+        </div>
+        <div layout="row" layout-align="center center">
+          <h4>OR</h4>
+        </div>
+        <div layout-align="center center" layout-fill layout-padding class="weight">
+          <md-input-container md-no-float flex-gt-lg>
+            <h2 class="subtitle">Calculate Weight:</h2>
+            <div layout="row" layout-align="center center">
+              <md-button ui-sref="tracking">
+                <ng-md-icon icon="photo_camera" size="48px"></ng-md-icon>
+              </md-button>
+            </div> 
+          </md-input-container>
+        </div>
+      </form>
+    </md-card>
   </md-content>
 </section>
-
-<!-- 
-
-
-
-
-<md-content id="home">
-  <md-list>
-  	<div layout="row" layout-align="center center">
-		  <h2>Enter Weight</h2>
-		</div>
-    <md-list-item class="md-3-line">
-      <div class="md-list-item-text">
-        <md-input-container md-no-float class="md-block">
-        	<input ng-model="weight" 
-        				 placeholder="Weight ({{getWeightMetric()}})"
-        				 type="number"/>
-        </md-input-container>
-      </div>
-      <md-button ng-click="submitMetric('weight', weight)" class="md-secondary">Respond</md-button>
-    </md-list-item>
-		<div layout="row" layout-align="center center">
-		  <h4>OR</h4>
-		</div>
-		<div layout="row" layout-align="center center">
-		  <h2>Enter Age</h2>
-		</div>
-		<md-list-item class="md-3-line">
-			<md-input-container layout="row">
-				<md-content>Age in: </md-content>
-			  <md-switch ng-model="isMonths"> {{isMonths ? "months" : "years"}}</md-switch>
-			</md-input-container>   
-    </md-list-item>
-    <md-list-item class="md-3-line">
-      <div class="md-list-item-text">
-        <md-input-container md-no-float class="md-block">
-        	<input ng-model="age" 
-        				 placeholder="Age"
-        				 type="number"/>
-        </md-input-container>
-      </div>
-      <md-button ng-click="submitMetric('age', age)" class="md-secondary">Respond</md-button>
-    </md-list-item>
-   	<div layout="row" layout-align="center center">
-		  <h4>OR</h4>
-		</div>
-		<div layout="row" layout-align="center center">
-		  <h2>Determine Height With Camera</h2>
-		</div>
-		<div layout="row" layout-align="center center">
-			<md-button>
-				<ng-md-icon icon="photo_camera" size="48px"></ng-md-icon>
-			</md-button>
-		</div>			 
-  </md-list>
-</md-content> -->

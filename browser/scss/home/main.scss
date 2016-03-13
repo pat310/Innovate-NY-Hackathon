@@ -12,14 +12,32 @@
     text-align: center;
   }
 
+  .switch {
+    padding-right: 10px;
+    vertical-align: middle;
+  }
+
   .subtitle{
     font-size: 18px;
+    padding-bottom: 0;
   }
 
   md-content{
-    background: rgba(236, 236, 234, 0.6);
-    // width: 70%;
-    text-align: center;
+    // background: rgba(236, 236, 234, 0.6);
+    margin: 0;
+  }
+
+  .weight {
+    vertical-align: middle;
+  }
+
+  md-card{
+    width: 90%;
+  }
+
+  md-input-container {
+    display: inline-block;
+    width: 70%;
     margin: 0;
   }
 
@@ -48,7 +66,10 @@
   h4{
     color: #FF3B80;
     font-weight: 600;
-    padding-top: 15px;
+  }
+
+  span {
+    vertical-align: middle;
   }
 
   .active {
