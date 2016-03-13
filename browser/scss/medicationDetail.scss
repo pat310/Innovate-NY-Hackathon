@@ -1,8 +1,16 @@
 .medication-details{
-  h3{
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
+  md-content{
+    h3{
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: left;
+    }
+  }
+
+  .dose{
+    color: red;
   }
 }
 

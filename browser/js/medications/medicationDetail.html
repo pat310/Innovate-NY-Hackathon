@@ -6,20 +6,20 @@
           <h1 class="md-display-2">{{medication.name}}</h1>
           <div class="medication-info" layout-wrap layout="row" layout-fill layout-align="space-between center" style="min-height:200px;">
             <div layout="column" flex="50" flex-sm="100" layout-align="center center">
-              <h3>Dosage</h3>
-              <h6> Some text about the given dosage for this medication. Now isnt this soooo interesting? </h6>
+              <h3>Dose</h3>
+              <h3 class="dose">ADD DOSE</h3>
             </div>          
             <div layout="column" flex="50" flex-sm="100" layout-align="center center">
               <h3>Instructions</h3>
-              <h6> You should take exactly X pills to treat your child - not X+1 or X-1 and certainly not X+2. If you following these instructions to the T your child will be better in no time and being the little ruffian that she/he is. Now lets gets your child back in shape </h6>
+              <p> {{medication.instructions || 'Click here to learn more'}} </p>
             </div>      
             <div layout="column" flex="50" flex-sm="100" layout-align="center center">
-              <h3>Common Side Effects</h3>
-              <h6> Ugh-oh. Unfortunately medecine is not quite perfect - so beware. Make to sure to watch out for the following possible side-effects. If they become too severe call a doctor immediately and consider an alternate treatment. We are oh so sorry that your child grew a third arm - we had not considered the negative effects of radiation. Think about how well he can now play the piano however. With an extra hand nobody can rival him. </h6>
+              <h3>Uses</h3>
+              <h5 ng-repeat="use in medication.use">{{use}}</h5>
             </div>          
             <div layout="column" flex="50" flex-sm="100" layout-align="center center">
-              <h3>Symptoms to Watch Out For</h3>
-              <h6> Oops sort of already dealt with that on the side effects write up. So be it. Lorum ipsum lorum ipsum - and some more good old latin. </p>
+              <h3>Concentraion | Max Dose | Dose per unit/kg</h3>
+              <h5>{{medication.concentration}} | {{medication.maxDose || 'NA'}} | {{medication.dosage}} {{medication.doseUnit}}/kg</h5>
             </div>
         </div>
         </md-content>
