@@ -1,5 +1,4 @@
 .calibrate{
-	display: flex;
 	justify-content: center;
 
 	.crosshair{
@@ -17,19 +16,20 @@
 		vertical-align: middle;
 	}
 
-	.canvas-div{
-		
-	}
-
 	#canvas{
-		top: 60%;
+		top: 70%;
 		position: absolute;
 		display: block;
+		outline: none;
 	}
 
 	.another-box{
 		display: block;
+		flex-wrap: nowrap;
 	}
+  .hidden{
+    display: none;
+  }
 
 }
 
