@@ -34,7 +34,7 @@ var Promise = require('bluebird');
 var chalk = require('chalk');
 var connectToDb = require('./server/db');
 var User = Promise.promisifyAll(mongoose.model('User'));
-var Drugs = Promise.promisfyAll(mongoose.model('Drugs'));
+var Medication = Promise.promisifyAll(mongoose.model('Medication'));
 
 var seedUsers = function () {
 
@@ -61,9 +61,17 @@ var seedUsers = function () {
 
 //Pat and Carolyn:
 //I will use the following categories (may add more as a think of them)
+<<<<<<< HEAD
 // Cardiac Arrest, Dysrythmia, Critical Care/ED [general], RSI, Seizure/Neuro, Sedation/Analgesia, Pressor
 var seedDrugs = function(){
     var drugs = [
+=======
+// Cardiac Arrest, Dysrhythmia, Critical Care [general], RSI, Seizure, Sedation, Pressor
+
+//**MICHAEL: Should concentrations be an array? Could there be multiple concentrations
+var seedMedications = function(){
+    var medications = [
+>>>>>>> 575c8ab243f92a3b50219a66e13d89c58b0638b4
         {
             name: 'Adenosine',
             use: ['Dysrhythmia'], // i made these up, but this is the format
@@ -145,6 +153,7 @@ var seedDrugs = function(){
             instructions: ''
             maxDose: ,
         },
+<<<<<<< HEAD
         {
             name: 'Hypertonic Saline',
             use: ['Seizure/Neuro'],
@@ -361,24 +370,53 @@ var seedDrugs = function(){
         },
 
         {
-            name: '',
-            use: ['']
-            concentration: ,
-            dosage: ,
-            doseUnit: '',
-            instructions: ''
+            name: 'Lidocaine',
+            use: ['Cardiac Arrest', 'Dysrhythmia']
+            concentration: 4000,
+            dosage: 0.05,
+            doseUnit: 'mcg/kg/min',
+            instructions: '1000mg/250ml'
             maxDose: ,
         },
 
         {
-            name: '',
-            use: ['']
-            concentration: ,
-            dosage: ,
-            doseUnit: '',
-            instructions: ''
+            name: 'Vasopressin',
+            use: ['Pressor']
+            concentration: 0.2,
+            dosage: 0.0005,
+            doseUnit: 'unit/kg/min',
+            instructions: '10 units/50ml'
             maxDose: ,
         },
+        {
+            name: 'Cisatricurium',
+            use: ['Critical Care/ED']
+            concentration: 2000,
+            dosage: 0.5,
+            doseUnit: 'mcg/kg/min',
+            instructions: ''
+            maxDose: 2,
+        },
+        {
+            name: 'Propofol',
+            use: ['Sedation/Analgesia']
+            concentration: 10000,
+            dosage: 20,
+            doseUnit: 'mcg/kg/min',
+            instructions: ''
+            maxDose: 300,
+        }
+=======
+        // {
+        //     name: '',
+        //     use: [''],
+        //     concentration: ,
+        //     dosage: ,
+        //     doseUnit: '',
+        //     instructions: ''
+        // 		maxDose: ,
+        // },
+>>>>>>> 575c8ab243f92a3b50219a66e13d89c58b0638b4
 
 
 
@@ -390,11 +428,11 @@ var seedDrugs = function(){
 
     ];
 
-    return Drugs.createAsync(drugs);
+    return Medication.createAsync(medications);
 };
 
 function wipeDB(){
-    var models = [User, Drugs];
+    var models = [User, Medication];
     return Promise.all(models.map(function(model){ return model.find({}).remove().exec();}));
 }
 
@@ -410,13 +448,13 @@ connectToDb.then(function(){
 }, function(){console.log(chalk.red('Failed to wipe DB!'));})
 .then(function(){
     console.log(chalk.green('Users seeded!'));
-    console.log(chalk.yellow('Seeding Drugs'));
-    return seedDrugs();
+    console.log(chalk.yellow('Seeding Medications'));
+    return seedMedications();
 }, function(){console.log(chalk.red('Failed to seed Users!'));})
 .then(function(){
-    console.log(chalk.green('Drugs seeded!'));
+    console.log(chalk.green('Medications seeded!'));
     process.kill(0);
-}, function(){console.log(chalk.red('Failed to seed drugs!'));})
+}, function(err){console.log(chalk.red('Failed to seed medications!'), err);})
 .catch(function(err){
     console.error(err);
     process.kill(1);

@@ -1,0 +1,18 @@
+  <form name="signupForm" ng-submit="signupForm.$valid && sendsignup(signup)">
+    <uib-alert type="danger" ng-show="error">
+      {{ error }}
+    </uib-alert>
+    <div layout-gt-sm="row">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label for="email">Email address</label>
+        <input type="email" ng-model="signup.email" class="form-control" id="email"/>
+      </md-input-container>
+    </div>
+    <div layout-gt-sm="row">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label for="signup-password">Password</label>
+        <input type="password" ng-model="signup.password" class="form-control" id="signup-password"/>
+      </md-input-container>
+    </div>
+    <md-button type="submit" class="md-raised">Submit</md-button>
+  </form>

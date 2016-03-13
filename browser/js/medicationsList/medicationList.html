@@ -1,0 +1,47 @@
+<md-dialog class="medication-list container-fluid" layout-align="center center">
+  <md-content flex layout="column">
+    <h2>{{category}}</h2>
+    <md-subheader ng-if="!filteredMeds.length">
+      There are no medications available at this time
+    </md-subheader>
+    <md-subheader class="md-no-sticky" ng-if="filteredMeds.length">
+        Select your desired medication
+      <table class="table" flex>
+        <thead>
+          <tr layout-align="center center">
+            <th>Medication</th>
+            <th>Concentration</th>
+            <th>Dose/kg</th>
+            <th>Patient Dose</th>
+          </tr>
+        </thead>
+      </md-subheader>
+        <tbody>
+          <md-list>
+            <tr ng-repeat="medication in filteredMeds" layout-align="center center" ng-click="goToDetailed(medication)">
+              <td>
+                <md-list-item>
+                  {{ medication.name }}
+                </md-list-item>
+              </td>
+              <td>
+                <md-list-item>
+                  {{ medication.concentration }} {{medication.doseUnit}}/mL
+                </md-list-item>
+              </td>
+              <td>
+                <md-list-item>
+                  {{ medication.dosage }} {{ medication.doseUnit }}/kg
+                </md-list-item>
+              </td>
+              <td>
+                <md-list-item>
+
+                </md-list-item>
+              </td>
+            </tr>
+          </md-list>
+        </tbody>
+      </table>
+  </md-content>
+</md-dialog>
