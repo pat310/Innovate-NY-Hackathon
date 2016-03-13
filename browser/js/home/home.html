@@ -1,6 +1,55 @@
-<section id="home">
-  <div class="container">
-    <h1>Baby Meds</h1>
-    
-  </div>
-</section>
+<md-input-container layout="row">
+	<md-content>Units in: </md-content>
+  <md-switch ng-model="isUS"> {{isUS ? "US" : "SI"}}</md-switch>
+</md-input-container>   
+
+<md-content>
+  <md-list>
+  	<div layout="row" layout-align="center center">
+		  <h2>Enter Weight</h2>
+		</div>
+    <md-list-item class="md-3-line">
+      <div class="md-list-item-text">
+        <md-input-container md-no-float class="md-block">
+        	<input ng-model="weight" 
+        				 placeholder="Weight ({{getWeightMetric()}})"
+        				 type="number"/>
+        </md-input-container>
+      </div>
+      <md-button ng-click="submitMetric('weight', weight)" class="md-secondary">Respond</md-button>
+    </md-list-item>
+		<div layout="row" layout-align="center center">
+		  <h4>OR</h4>
+		</div>
+		<div layout="row" layout-align="center center">
+		  <h2>Enter Age</h2>
+		</div>
+		<md-list-item class="md-3-line">
+			<md-input-container layout="row">
+				<md-content>Age in: </md-content>
+			  <md-switch ng-model="isMonths"> {{isMonths ? "months" : "years"}}</md-switch>
+			</md-input-container>   
+    </md-list-item>
+    <md-list-item class="md-3-line">
+      <div class="md-list-item-text">
+        <md-input-container md-no-float class="md-block">
+        	<input ng-model="age" 
+        				 placeholder="Age"
+        				 type="number"/>
+        </md-input-container>
+      </div>
+      <md-button ng-click="submitMetric('age', age)" class="md-secondary">Respond</md-button>
+    </md-list-item>
+   	<div layout="row" layout-align="center center">
+		  <h4>OR</h4>
+		</div>
+		<div layout="row" layout-align="center center">
+		  <h2>Determine Height With Camera</h2>
+		</div>
+		<div layout="row" layout-align="center center">
+			<md-button>
+				<ng-md-icon icon="photo_camera" size="48px"></ng-md-icon>
+			</md-button>
+		</div>			 
+  </md-list>
+</md-content>

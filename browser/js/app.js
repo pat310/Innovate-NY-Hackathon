@@ -4,7 +4,8 @@ window.app = angular.module('InnovateNYP', [
   'ui.router', 
   'ui.bootstrap', 
   'ngAnimate',
-  'ngMaterial'
+  'ngMaterial',
+  'ngMdIcons'
 ]);
 
 angular.module('InnovateNYP')

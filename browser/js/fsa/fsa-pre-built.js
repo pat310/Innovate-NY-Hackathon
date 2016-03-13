@@ -52,6 +52,7 @@
     function onSuccessfulLogin(response) {
       var data = response.data;
       Session.create(data.id, data.user);
+
       $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
       return data.user;
     }
@@ -89,6 +90,14 @@
           .then(onSuccessfulLogin)
           .catch(function () {
             return $q.reject({ message: 'Invalid login credentials.' });
+          });
+      };
+
+      this.signup = function (credentials) {
+        return $http.post('/api/users', credentials)
+          .then(onSuccessfulLogin)
+          .catch(function (error) {
+              return $q.reject(error)
           });
       };
 
