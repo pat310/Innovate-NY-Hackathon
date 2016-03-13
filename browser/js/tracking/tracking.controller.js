@@ -1,6 +1,7 @@
 'use strict';
 angular.module('InnovateNYP')
-.controller('TrackingCtrl', function($scope, Tracking, $mdDialog, Calculation){
+.controller('TrackingCtrl', function($scope, Tracking, $mdDialog, Calculation, $state){
+	
 	$scope.showAlert = function(ev) {
     $mdDialog.show(
       $mdDialog.alert()
@@ -55,7 +56,6 @@ angular.module('InnovateNYP')
   };
 
 	function loadPicture(){
-		$scope.imageSource = "../../assets/babyrotate.jpg";
 	  var img = document.getElementById('img');
 		var div = document.querySelector('.image-container');
 
@@ -64,10 +64,24 @@ angular.module('InnovateNYP')
 			.then(function(height){
 				$scope.showLoader = false;
 	  		$scope.$digest();
-	  		Calculation.height = height;
-	  		$scope.height = height;
-	  		$scope.weight = Math.round(Calculation.heightToWeight());
-	  		$scope.weightEnglish = Math.round($scope.weight * 2.2)
+	  		Calculation.height = height;			  
+	  		var weight = Math.round(Calculation.heightToWeight());
+	  		var weightEnglish = Math.round(weight * 2.2);
+
+				(function(ev) {
+				  var confirm = $mdDialog.confirm()
+				        .title(`Patient's weight estimated at ${weight}kg (${weightEnglish}lb)`)
+				        .textContent('Is the weight acceptable?')
+				        .ariaLabel('Lucky day')
+				        .targetEvent(ev)
+				        .ok('Yes')
+				        .cancel('No, retake');
+				  $mdDialog.show(confirm).then(function() {
+				    $state.go('medications');
+				  }, function() {
+				  	$state.go('tracking');
+				  });
+				})();
 			});
 	  };
 	}
