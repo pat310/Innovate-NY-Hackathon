@@ -7,12 +7,13 @@ angular.module('InnovateNYP')
   Medication.categories = [
     { name: 'Cardiac Arrest', url: 'cardiacArrest' },
     { name: 'Dysrhythmia', url: 'dysrhythmia' },
-    { name: 'Critical Care / General', url: 'criticalCare' },
-    { name: 'RSI', url: 'RSI' },
-    { name: 'Seizure', url: 'seizure' },
-    { name: 'Sedation', url: 'sedation' },
+    { name: 'Critical Care / ED', url: 'criticalcare_ed' },
+    { name: 'RSI', url: 'rsi' },
+    { name: 'Seizure/Neuro', url: 'seizure_neuro' },
+    { name: 'Sedation/Analgesia', url: 'sedation_analgesia' },
     { name: 'Pressor', url: 'pressor' },
-    { name: 'Frequently Used', url: 'frequent' }
+    { name: 'Frequently Used', url: 'frequent' },
+    { name: 'Misc', url: 'misc' }
   ];
 
   Medication.getAll = function(){

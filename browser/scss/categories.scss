@@ -1,11 +1,61 @@
 .med-categories {
-  /* For breakpoint `-xs` */
-  /* For breakpoint `-sm` */
-  /* For breakpoint `-md` */
-  /* For breakpoint `-gt-md` */ 
+  h2{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: darken(#585858, 20%);
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .layout-fill{
+    background: lighten(#71AFAD, 15%);
+    text-align: center;
+  }
+
+  .layout-row{
+    text-align: center;
+  }
+  .search-form{
+    width: 80%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .select{
+    padding-top: 25px;
+  }
+  .md-whiteframe-1dp{
+    text-align: center;
+    background: lighten(#C1E2A3, 10%);
+    span{
+      color: darken(#585858, 10%);
+    }
+  }
+
+  md-content.auto-complete{
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    background: lighten(#71AFAD, 15%);
+    padding-bottom: 30px;
+  }
+
+  .category-text {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  md-button {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
   md-whiteframe {
-    background: #fff;
+    background: #ECECEA;
     margin: 30px;
     height: 100px; 
   }

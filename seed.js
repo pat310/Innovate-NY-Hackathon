@@ -62,10 +62,15 @@ var seedUsers = function () {
 //Pat and Carolyn:
 //I will use the following categories (may add more as a think of them)
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Cardiac Arrest, Dysrythmia, Critical Care/ED [general], RSI, Seizure/Neuro, Sedation/Analgesia, Pressor
 var seedDrugs = function(){
     var drugs = [
 =======
+=======
+
+// Cardiac Arrest, Dysrythmia, Critical Care/ED [general], RSI, Seizure/Neuro, Sedation/Analgesia, Pressor
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
 // Cardiac Arrest, Dysrhythmia, Critical Care [general], RSI, Seizure, Sedation, Pressor
 
 //**MICHAEL: Should concentrations be an array? Could there be multiple concentrations
@@ -78,7 +83,11 @@ var seedMedications = function(){
             concentration: 1,
             dosage: 0.1,
             doseUnit: 'mg',
+<<<<<<< HEAD
             instructions: 'Comes in 3mg/mL. Dilute to 1mg/mL [2ml into 4ml NS]. Double the amount for second dose.'
+=======
+            instructions: 'Comes in 3mg/mL. Dilute to 1mg/mL [2ml into 4ml NS]. Double the amount for second dose.',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             maxDose: 6,
         },
         {
@@ -87,7 +96,11 @@ var seedMedications = function(){
             concentration: 3,
             dosage: 5,
             doseUnit: 'mg',
+<<<<<<< HEAD
             instructions: '[Mix 150mg (3mL) + 47mL D5W. Administer over 10 min.]'
+=======
+            instructions: '[Mix 150mg (3mL) + 47mL D5W. Administer over 10 min.]',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             maxDose: 150,
         },
         {
@@ -96,7 +109,11 @@ var seedMedications = function(){
             concentration: 0.1,
             dosage: 0.02,
             doseUnit: 'mg',
+<<<<<<< HEAD
             instructions: ''
+=======
+            instructions: '',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             maxDose: 0.5,
         },
         {
@@ -105,6 +122,79 @@ var seedMedications = function(){
             concentration: 1,
             dosage: 1,
             doseUnit: 'mEq',
+            instructions: '',
+            maxDose: 50,
+        },
+        {
+            name: 'Calcium Chloride',
+            use: ['Cardiac Arrest', 'Critical Care/ED', 'Dysrhythmia'],
+            concentration: 100,
+            dosage: 20,
+            doseUnit: 'mg',
+            instructions: '',
+            maxDose: 1000,
+        },
+        {
+            name: 'Dextrose 50%',
+            use: ['Critical Care/ED', 'Seizure/Neuro'],
+            concentration: 0.5,
+            dosage: 0.5,
+            doseUnit: 'g',
+            instructions: '',
+            maxDose: 25,
+        },
+        {
+            name: 'Epinephrine 1:10,000',
+            use: ['Cardiac Arrest', 'Critical Care/ED'],
+            concentration: 0.1,
+            dosage: 0.01,
+            doseUnit: 'mg',
+            instructions: '',
+            maxDose: 1,
+        },
+        {
+            name: 'Epinephrine 1:1,000',
+            use: ['Cardiac Arrest', 'Critical Care/ED'],
+            concentration: 1,
+            dosage: 0.01,
+            doseUnit: 'mg',
+            instructions: 'IM/SC',
+            maxDose: 0.3,
+        },
+        {
+            name: 'Flumazenil',
+            use: ['Critical Care/ED'],
+            concentration: 100,
+            dosage: 5,
+            doseUnit: 'mcg',
+            instructions: ''
+        },
+        {
+            name: 'Hypertonic Saline',
+            use: ['Seizure/Neuro'],
+            concentration: 1,
+            dosage: 0.5,
+            doseUnit: 'mL',
+            instructions: '',
+            maxDose: 30,
+        },
+
+        {
+            name: 'Lorazepam',
+            use: ['Seizure/Neuro', 'Sedation/Analgesia'],
+            concentration: 2,
+            dosage: 0.05,
+            doseUnit: 'mg',
+            instructions: '',
+            maxDose: 4,
+        },
+
+        {
+            name: 'Lidocaine 2%',
+            use: ['Cardiac Arrest', 'Dysrhythmia'],
+            concentration: 20,
+            dosage: 1,
+            doseUnit: 'mg',
             instructions: ''
             maxDose: 50,
         },
@@ -135,6 +225,7 @@ var seedMedications = function(){
             instructions: ''
             maxDose: 1,
         },
+<<<<<<< HEAD
         {
             name: 'Epinephrine 1:1,000',
             use: ['Cardiac Arrest', 'Critical Care/ED'],
@@ -183,6 +274,8 @@ var seedMedications = function(){
             instructions: ''
             maxDose: ,
         },
+=======
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
 
         {
             name: 'Magnesium Sulfate',
@@ -190,7 +283,11 @@ var seedMedications = function(){
             concentration: 500,
             dosage: 25,
             doseUnit: 'mg',
+<<<<<<< HEAD
             instructions: ''
+=======
+            instructions: '',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             maxDose: 20000,
         },
         {
@@ -199,7 +296,11 @@ var seedMedications = function(){
             concentration: 0.25,
             dosage: 0.25,
             doseUnit: 'g',
+<<<<<<< HEAD
             instructions: ''
+=======
+            instructions: '',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             maxDose: 12.5,
         },
         {
@@ -208,7 +309,11 @@ var seedMedications = function(){
             concentration: 0.4,
             dosage: 0.01,
             doseUnit: 'mg',
+<<<<<<< HEAD
             instructions: ''
+=======
+            instructions: '',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             maxDose: 2,
         },
         {
@@ -217,6 +322,7 @@ var seedMedications = function(){
             concentration: 100,
             dosage: 15,
             doseUnit: 'mg',
+<<<<<<< HEAD
             instructions: 'Administer over 30-60min until therapeutic/toxic effect'
             maxDose: 1000,
         },
@@ -229,13 +335,30 @@ var seedMedications = function(){
             instructions: 'Comes 10mg/ml. Mix 0.1ml in 9.9ml NS'
             maxDose: ,
         },
+=======
+            instructions: 'Administer over 30-60min until therapeutic/toxic effect',
+            maxDose: 1000,
+        },
+        // {
+        //     name: 'Phenylephrine',
+        //     use: ['Pressor'],
+        //     concentration: ,
+        //     dosage: ,
+        //     doseUnit: '',
+        //     instructions: 'Comes 10mg/ml. Mix 0.1ml in 9.9ml NS'
+        // },
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
         {
             name: 'Vasopressin',
             use: ['Cardiac Arrest', 'Pressor'],
             concentration: 20,
             dosage: 0.5,
             doseUnit: 'unit',
+<<<<<<< HEAD
             instructions: ''
+=======
+            instructions: '',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             maxDose: 40,
         },
         {
@@ -245,24 +368,39 @@ var seedMedications = function(){
             dosage: 0.3,
             doseUnit: 'mg',
             instructions: ''
+<<<<<<< HEAD
             maxDose: ,
         },
         {
             name: 'Fentanyl',
             use: ['RSI', 'Sedation/Analgesia']
+=======
+        },
+        {
+            name: 'Fentanyl',
+            use: ['RSI', 'Sedation/Analgesia'],
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             concentration: 50,
             dosage: 1,
             doseUnit: 'mcg',
             instructions: ''
+<<<<<<< HEAD
             maxDose: ,
         },
         {
             name: 'Ketamine',
             use: ['RSI', 'Sedation/Analgesia']
+=======
+        },
+        {
+            name: 'Ketamine',
+            use: ['RSI', 'Sedation/Analgesia'],
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             concentration: 10,
             dosage: 2,
             doseUnit: 'mg',
             instructions: ''
+<<<<<<< HEAD
             maxDose: ,
         },
         {
@@ -272,24 +410,47 @@ var seedMedications = function(){
             dosage: 0.1,
             doseUnit: 'mg',
             instructions: ''
+=======
+        },
+        {
+            name: 'Midazolam',
+            use: ['RSI', 'Sedation/Analgesia'],
+            concentration: 1,
+            dosage: 0.1,
+            doseUnit: 'mg',
+            instructions: '',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             maxDose: 4,
         },
         {
             name: 'Propofol',
+<<<<<<< HEAD
             use: ['RSI', 'Sedation/Analgesia']
             concentration: 10,
             dosage: 2,
             doseUnit: 'mg',
             instructions: 'Push Dose'
+=======
+            use: ['RSI', 'Sedation/Analgesia'],
+            concentration: 10,
+            dosage: 2,
+            doseUnit: 'mg',
+            instructions: 'Push Dose',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             maxDose: 40,
         },
         {
             name: 'Rocuronium',
+<<<<<<< HEAD
             use: ['RSI']
+=======
+            use: ['RSI'],
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             concentration: 10,
             dosage: 1,
             doseUnit: 'mg',
             instructions: ''
+<<<<<<< HEAD
             maxDose: ,
         },
         {
@@ -300,72 +461,130 @@ var seedMedications = function(){
             doseUnit: 'mg',
             instructions: ''
             maxDose: ,
+=======
+        },
+        {
+            name: 'Succinylcholine',
+            use: ['RSI'],
+            concentration: 20,
+            dosage: 1,
+            doseUnit: 'mg',
+            instructions: '',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
         },
 
         {
             name: 'Vecuronium',
+<<<<<<< HEAD
             use: ['RSI']
+=======
+            use: ['RSI'],
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             concentration: 1,
             dosage: 0.1,
             doseUnit: 'mg',
             instructions: ''
+<<<<<<< HEAD
             maxDose: ,
+=======
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
         },
 
         {
             name: 'Dobutamine 1:1',
+<<<<<<< HEAD
             use: ['Pressor']
+=======
+            use: ['Pressor'],
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             concentration: 1000,
             dosage: 2,
             doseUnit: 'mcg/kg/min',
             instructions: '250mg/250ml'
+<<<<<<< HEAD
             maxDose: 40,
+=======
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
         },
 
         {
             name: 'Defibrillation',
+<<<<<<< HEAD
             use: ['Cardiac Arrest']
             concentration: 1,
             dosage: 2,
             doseUnit: 'J',
             instructions: ''
+=======
+            use: ['Cardiac Arrest'],
+            concentration: 1,
+            dosage: 2,
+            doseUnit: 'J',
+            instructions: '',
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             maxDose: 300,
         },
         {
             name: 'Cardioversion',
+<<<<<<< HEAD
             use: ['Dysrhythmia']
+=======
+            use: ['Dysrhythmia'],
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             concentration: 1,
             dosage: 0.5,
             doseUnit: 'J',
             instructions: ''
+<<<<<<< HEAD
             maxDose: ,
         },
         {
             name: 'Dopamine',
             use: ['Pressor']
+=======
+        },
+        {
+            name: 'Dopamine',
+            use: ['Pressor'],
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             concentration: 800,
             dosage: 2,
             doseUnit: 'mcg/kg/min',
             instructions: '200mg/250ml'
+<<<<<<< HEAD
             maxDose: 20,
         },
 
         {
             name: 'Epinephrine Drip',
             use: ['Pressor']
+=======
+        },
+        {
+            name: 'Epinephrine Drip',
+            use: ['Pressor'],
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             concentration: 10,
             dosage: 0.05,
             doseUnit: 'mcg/kg/min',
             instructions: '0.5mg/50ml'
+<<<<<<< HEAD
             maxDose: 5,
         },
         {
             name: 'Norepinephrine Drip',
             use: ['Pressor']
+=======
+        },
+        {
+            name: 'Norepinephrine Drip',
+            use: ['Pressor'],
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
             concentration: 10,
             dosage: 0.05,
             doseUnit: 'mcg/kg/min',
             instructions: '0.5mg/50ml'
+<<<<<<< HEAD
             maxDose: 2,
         },
 
@@ -407,13 +626,18 @@ var seedMedications = function(){
             maxDose: ,
         }
 =======
+=======
+        },
+
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
         // {
         //     name: '',
-        //     use: [''],
+        //     use: ['']
         //     concentration: ,
         //     dosage: ,
         //     doseUnit: '',
         //     instructions: ''
+<<<<<<< HEAD
         // 		maxDose: ,
         // },
 >>>>>>> 575c8ab243f92a3b50219a66e13d89c58b0638b4
@@ -425,6 +649,10 @@ var seedMedications = function(){
 
 
 
+=======
+        //     maxDose: ,
+        // }
+>>>>>>> 8819d62023f24ca29db0c15654f0a46b0d004df1
 
     ];
 
