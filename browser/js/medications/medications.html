@@ -1,13 +1,8 @@
 <section class="med-categories container-fluid" layout="column">
-  <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;">
-    <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center" ng-repeat="category in categories" ng-click="openMedList(category, $event)">
-      <span>{{category.name}}</span>
-    </md-whiteframe>
-  </div>
-  <div layout="column" flex-md="50">
-    <md-content class="md-padding" layout-fill layout-padding>
-      <form ng-submit="$event.preventDefault()">
-        <h3>Quick Look Up</h3>
+  <div layout="column" layout-align="center center">
+    <md-content class="md-padding" layout-fill class="auto-complete">
+      <h2 layout-align="center center">Quick Look Up</h2>
+      <form ng-submit="$event.preventDefault()" class="search-form">
         <md-autocomplete
             md-search-text="searchText"
             md-items="item in querySearch(searchText)"
@@ -18,9 +13,14 @@
             <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.name}}</span>
           </md-item-template>
         </md-autocomplete>
-        <br/>
       </form>
       <md-button class="md-raised md-primary">Enter</md-button>
     </md-content>
+  </div>
+  <h2>Select Category</h2>
+  <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;">
+    <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center" ng-repeat="category in categories" ng-click="openMedList(category, $event)">
+      <span class="category-text">{{category.name}}</span>
+    </md-whiteframe>
   </div>
 </section>

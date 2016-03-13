@@ -1,11 +1,51 @@
 .med-categories {
-  /* For breakpoint `-xs` */
-  /* For breakpoint `-sm` */
-  /* For breakpoint `-md` */
-  /* For breakpoint `-gt-md` */ 
+  h2{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: darken(#585858, 20%);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .layout-fill{
+    background: #71AFAD;
+  }
+
+  .search-form{
+    width: 80%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .md-whiteframe-1dp{
+    background: lighten(#C1E2A3, 10%);
+    span{
+      color: darken(#585858, 10%);
+    }
+  }
+
+  md-content.auto-complete{
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    background: #71AFAD;
+  }
+
+  .category-text {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  md-button {
+    display: inline-block;
+    vertical-align: middle;
+  }
 
   md-whiteframe {
-    background: #fff;
+    background: #ECECEA;
     margin: 30px;
     height: 100px; 
   }
