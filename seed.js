@@ -223,9 +223,9 @@ var seedMedications = function(){
         {
             name: 'Phenylephrine',
             use: ['Pressor'],
-            concentration: ,
-            dosage: ,
-            doseUnit: '',
+            concentration: 100,
+            dosage: 2,
+            doseUnit: 'mcg',
             instructions: 'Comes 10mg/ml. Mix 0.1ml in 9.9ml NS'
             maxDose: ,
         },
@@ -260,8 +260,8 @@ var seedMedications = function(){
             name: 'Ketamine',
             use: ['RSI', 'Sedation/Analgesia']
             concentration: 10,
-            dosage: mg,
-            doseUnit: '2',
+            dosage: 2,
+            doseUnit: 'mg',
             instructions: ''
             maxDose: ,
         },
@@ -319,7 +319,7 @@ var seedMedications = function(){
             dosage: 2,
             doseUnit: 'mcg/kg/min',
             instructions: '250mg/250ml'
-            maxDose: ,
+            maxDose: 40,
         },
 
         {
@@ -347,7 +347,7 @@ var seedMedications = function(){
             dosage: 2,
             doseUnit: 'mcg/kg/min',
             instructions: '200mg/250ml'
-            maxDose: ,
+            maxDose: 20,
         },
 
         {
@@ -357,7 +357,7 @@ var seedMedications = function(){
             dosage: 0.05,
             doseUnit: 'mcg/kg/min',
             instructions: '0.5mg/50ml'
-            maxDose: ,
+            maxDose: 5,
         },
         {
             name: 'Norepinephrine Drip',
@@ -366,7 +366,7 @@ var seedMedications = function(){
             dosage: 0.05,
             doseUnit: 'mcg/kg/min',
             instructions: '0.5mg/50ml'
-            maxDose: ,
+            maxDose: 2,
         },
 
         {
@@ -376,7 +376,7 @@ var seedMedications = function(){
             dosage: 0.05,
             doseUnit: 'mcg/kg/min',
             instructions: '1000mg/250ml'
-            maxDose: ,
+            maxDose: 50,
         },
 
         {
@@ -386,7 +386,7 @@ var seedMedications = function(){
             dosage: 0.0005,
             doseUnit: 'unit/kg/min',
             instructions: '10 units/50ml'
-            maxDose: ,
+            maxDose: .002,
         },
         {
             name: 'Cisatricurium',
@@ -398,13 +398,13 @@ var seedMedications = function(){
             maxDose: 2,
         },
         {
-            name: 'Propofol',
-            use: ['Sedation/Analgesia']
-            concentration: 10000,
+            name: 'Normal Saline Bolus',
+            use: ['Critical Care/ED']
+            concentration: ,
             dosage: 20,
-            doseUnit: 'mcg/kg/min',
+            doseUnit: 'ml',
             instructions: ''
-            maxDose: 300,
+            maxDose: ,
         }
 =======
         // {
