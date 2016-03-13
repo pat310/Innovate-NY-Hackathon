@@ -37,5 +37,12 @@ angular.module('InnovateNYP')
     return name;
   }
 
+  Medication.getOne = function(id){
+    return $http.get(`/api/medications/details/${id}`)
+    .then(function(res){
+      return res.data;
+    })
+  }
+
   return Medication;
 })
