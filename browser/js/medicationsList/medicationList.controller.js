@@ -1,10 +1,14 @@
 'use strict';
 
 angular.module('InnovateNYP')
-.controller('MedicationListCtrl', function($scope, filteredMedications, $stateParams, Medication, $mdDialog){
-  $scope.category = Medication.formatCategoryName($stateParams.category);
-  $scope.filteredMeds = filteredMedications;
-  console.log('medications', $scope.filteredMeds)
+.controller('MedicationListCtrl', function($scope, $stateParams, Medication, $mdDialog, category){
+  $scope.category = category.name;
+
+  Medication.getByUse(category.url)
+  .then(function(medications){
+    $scope.filteredMeds = medications;
+  })
+  
   $scope.navigateTo = function(to, event) {
     $mdDialog.show(
       $mdDialog.alert()

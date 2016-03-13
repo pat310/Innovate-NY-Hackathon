@@ -1,6 +1,6 @@
 <section class="med-categories container-fluid" layout="column">
   <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;">
-    <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center" ng-repeat="category in categories" ui-sref="medications({category: category.url})">
+    <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center" ng-repeat="category in categories" ng-click="openMedList(category, $event)">
       <span>{{category.name}}</span>
     </md-whiteframe>
   </div>
