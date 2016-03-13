@@ -1,6 +1,6 @@
 'use strict';
 angular.module('InnovateNYP')
-.controller('TrackingCtrl', function($scope, Tracking, $mdDialog){
+.controller('TrackingCtrl', function($scope, Tracking, $mdDialog, Calculation){
 	$scope.showAlert = function(ev) {
     $mdDialog.show(
       $mdDialog.alert()
@@ -64,7 +64,10 @@ angular.module('InnovateNYP')
 			.then(function(height){
 				$scope.showLoader = false;
 	  		$scope.$digest();
-	  		console.log('height', height);
+	  		Calculation.height = height;
+	  		$scope.height = height;
+	  		$scope.weight = Math.round(Calculation.heightToWeight());
+	  		$scope.weightEnglish = Math.round($scope.weight * 2.2)
 			});
 	  };
 	}

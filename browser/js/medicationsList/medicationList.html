@@ -12,7 +12,7 @@
             <th>Medication</th>
             <th>Concentration</th>
             <th>Dose/kg</th>
-            <th>Patient Dose</th>
+            <th>Deliver: Dose (Vol)</th>
           </tr>
         </thead>
       </md-subheader>
@@ -36,7 +36,7 @@
               </td>
               <td>
                 <md-list-item>
-                  ADD DOSE
+                  {{ medication.patientDose[0] }} {{ medication.doseUnit }} ({{ medication.patientDose[1] }})
                 </md-list-item>
               </td>
             </tr>
