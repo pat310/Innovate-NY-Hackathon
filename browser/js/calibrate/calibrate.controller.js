@@ -7,11 +7,27 @@ angular.module('InnovateNYP')
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
 
-  $scope.loadPicture = function(){
+  $scope.initUpload = function(){
+    $scope.showLoader = true;
+    var reader = new FileReader();
+    var fileInput = document.getElementById("file_input");
+    if(fileInput){
+      fileInput.onchange = function(evt){
+        reader.readAsDataURL(this.files[0]);
+      };
 
+      reader.onload = function (e) {
+        var source = e.target.result;
+        $scope.loadPicture(source);
+      };
+    }
+  }
+
+  $scope.loadPicture = function(src){
+    console.log('here is the source', src);
     $scope.showLoader = true;
 
-    image.src = '../../assets/creditcard.png';
+    image.src = src;
 
 
     image.onload = function(){
@@ -34,7 +50,7 @@ angular.module('InnovateNYP')
   };
 
   $scope.analyzeAutomatically = function(){  
-    $scope.showLoader = true;
+    $scope.analyze = true;
 
     var image = new Image();
     image.src = '../../assets/creditcard.png';
@@ -50,7 +66,7 @@ angular.module('InnovateNYP')
 
       Calibrate.calcAverageColor(context, image.width, image.height, 4)
       .then(function(averages){
-        $scope.showLoader = false;
+        $scope.analyze = false;
         $scope.$digest();
         console.log('averages', averages);
         $scope.backgroundColor = {'background-color':`rgb(${averages.r}, ${averages.g}, ${averages.b})`};

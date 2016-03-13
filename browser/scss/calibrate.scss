@@ -1,8 +1,39 @@
-.crosshair{
-	cursor: crosshair;
+.calibrate{
+	display: flex;
+	justify-content: center;
+
+	.crosshair{
+		cursor: crosshair;
+	}
+
+	.color-swatch{
+		width: 60px;
+		height: 60px;
+		color: white;
+	}
+	
+	.buttons{
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.canvas-div{
+		
+	}
+
+	#canvas{
+		top: 60%;
+		position: absolute;
+		display: block;
+	}
+
+	.another-box{
+		display: block;
+	}
+
 }
 
-.color-swatch{
-	width: 50px;
-	height: 50px;
+.container-fluid{
+  width: 80%;
+	text-align: center;
 }
