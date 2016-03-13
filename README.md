@@ -1,4 +1,6 @@
-#SnapDose - Built for the InnovateNYP Appathon. 
+#SnapDose
+######*Built for the InnovateNYP Appathon*
+
 SnapDose is a device agnostic application designed for pediatric providers. SnapDose makes weight estimation and weight based dosing a snap. 
 
 Approximately one-in-five pediatric patients are misdosed each year.  The goal of SnapDose is to reduce medication errors and under/overdosing pediatric patients, particularly in outpatient areas where accurate weights may not be readily available and emergencies are uncommon.
@@ -9,10 +11,8 @@ Approximately one-in-five pediatric patients are misdosed each year.  The goal o
 3. In a seperate terminal: `gulp`
 
 ## Usage
-* First, upload or snap a picture of an object to be calibrated (we have preloaded the size of a driver's license, credit card, debit card, etc. but you may select any object you wish and input the dimensions)
-	* This calibration object must be in each photo that you upload of the patient in order to scale the patient's height
-* Upload or snap a picture of the patient laying supine centered.  **Note:** Your calibration object must be present in the picture!
-* *SnapDose* uses image recognition to automatically determine the patient's height
+* First, upload or snap a picture of an object to be calibrated (we have preloaded the size of a driver's license, credit card, debit card, etc. but you may select any object you wish and input the dimensions - **note** the calibration object must be in each photo that you upload of the patient in order to scale the patient's height)
+* Upload or snap a picture of the patient laying supine - be certain that the calibration object is in the photo
 * From the patient's height, the weight is determined using an algorithm developed based on the CDC growth chart
 * After the approximate weight is calculated, choose whether to accept or take a new picture
 * Once a weight is accepted, a variety of emergency care areas are provided (alternatively, the user can choose to search from a larger list of care areas)
