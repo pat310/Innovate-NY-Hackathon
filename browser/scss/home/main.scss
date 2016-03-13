@@ -3,6 +3,10 @@
   md-content{
     background: lighten(#71AFAD, 15%);
   }
+
+  // form{
+  //   background: lighten(#71AFAD, 15%);
+  // }
   h2 {
     text-align: center;
     text-transform: uppercase;
@@ -20,6 +24,13 @@
   .subtitle{
     font-size: 18px;
     padding-bottom: 0;
+  }
+
+  .logo{
+    img {
+      display: block;
+      width: 50%;
+    }
   }
 
   md-content{
