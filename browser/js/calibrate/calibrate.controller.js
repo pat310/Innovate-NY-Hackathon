@@ -1,6 +1,55 @@
 'use strict';
 angular.module('InnovateNYP')
-.controller('CalibrateCtrl', function($scope, Calibrate){
+.controller('CalibrateCtrl', function($scope, Calibrate, $mdDialog){
+
+  $scope.showPrompt = function(ev) {
+    var confirm = $mdDialog.confirm()
+          .title('Are you using a credit card to measure?')
+          .textContent('Credit cards have a standard dimension so we can figure it out for you.')
+          .ariaLabel('Lucky day')
+          .targetEvent(ev)
+          .ok('Yes')
+          .cancel('No');
+    $mdDialog.show(confirm).then(function() {
+      $scope.status = 'creditCard';
+    }, function() {
+      $scope.status = 'other';
+    });
+  };
+
+  $scope.showAlert = function(ev) {
+    $mdDialog.show(
+      $mdDialog.alert()
+        .parent(angular.element(document.querySelector('#popupContainer')))
+        .clickOutsideToClose(true)
+        .title('You do not have any saved objects')
+        .textContent('Click on \'New Object\'')
+        .ariaLabel('Alert Dialog Demo')
+        .ok('Got it!')
+        .targetEvent(ev)
+    );
+  };
+
+  var stream;
+  $scope.startCamera = function(){ 
+    $scope.hide = false;
+    var video = document.getElementById('MediaStreamVideo');
+
+    navigator.webkitGetUserMedia(
+      {video: true, audio: true}, // Options
+      function(localMediaStream) { // Success
+        stream = localMediaStream;
+        video.src = window.webkitURL.createObjectURL(stream);
+      },
+      function(err) { // Failure
+        alert('getUserMedia failed: Code ' + err.code);
+      }
+    );
+  }
+
+  function stopCamera(){
+    $scope.hide = true;
+  }
 
   $scope.selectPicture = true;
   var image = new Image();
@@ -8,6 +57,7 @@ angular.module('InnovateNYP')
   var context = canvas.getContext('2d');
 
   $scope.initUpload = function(){
+    stopCamera();
     $scope.showLoader = true;
     var reader = new FileReader();
     var fileInput = document.getElementById("file_input");
@@ -24,7 +74,6 @@ angular.module('InnovateNYP')
   }
 
   $scope.loadPicture = function(src){
-    console.log('here is the source', src);
     $scope.showLoader = true;
 
     image.src = src;
