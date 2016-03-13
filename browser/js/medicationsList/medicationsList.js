@@ -1,12 +1,12 @@
 'use strict';
 angular.module('InnovateNYP')
 .config(function ($stateProvider) {
-  $stateProvider.state('medications', {
-    url: '/medications/:category',
-    templateUrl: 'js/medications/medicationList.html',
+  $stateProvider.state('medications.category', {
+    url: '/:category',
+    templateUrl: 'js/medicationsList/medicationList.html',
     controller: 'MedicationListCtrl',
     resolve: {
-      medications: function($stateParams, Medication){
+      filteredMedications: function($stateParams, Medication){
         return Medication.getByUse($stateParams.category)
         .then(function(medications){
           return medications;

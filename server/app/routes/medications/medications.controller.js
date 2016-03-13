@@ -17,3 +17,11 @@ exports.getByUse = function(req, res, next){
     })
     .then(null, next);
 }
+
+exports.getById = function(req, res, next){
+  return Medication.findById(req.params.id)
+    .then(function(medication){
+      res.json(medication);
+    })
+    .then(null, next);
+}

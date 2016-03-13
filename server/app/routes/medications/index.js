@@ -7,3 +7,4 @@ module.exports = router;
 
 router.get('/', controller.getAll);
 router.get('/:category', controller.getByUse);
+router.get('/details/:id', controller.getById);
