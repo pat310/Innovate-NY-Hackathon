@@ -12,7 +12,8 @@ angular.module('InnovateNYP')
     { name: 'Seizure/Neuro', url: 'seizure_neuro' },
     { name: 'Sedation/Analgesia', url: 'sedation_analgesia' },
     { name: 'Pressor', url: 'pressor' },
-    { name: 'Frequently Used', url: 'frequent' }
+    { name: 'Frequently Used', url: 'frequent' },
+    { name: 'Misc', url: 'misc' }
   ];
 
   Medication.getAll = function(){
