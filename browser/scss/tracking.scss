@@ -21,9 +21,13 @@
 
   #canvas {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -200px 0 0 -200px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    // left: 50%;
+    // top: 50%;
+    // margin: -200px 0 0 -200px;
   }
 
   .md-raised > label {
@@ -37,5 +41,22 @@
   }
   .hidden{
     display: none;
+  }
+  h1{
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    color: darken(#585858, 10%);
+  }
+
+  md-card{
+    min-height: 400px;
+  }
+
+  .image-container {
+    padding-top: 15px;
+    padding-bottom: 30px;
   }
 }

@@ -6,11 +6,12 @@ app.controller('HomeCtrl', function ($scope, $state) {
   }
 
 	$scope.submitMetric = function(metric, value){
-		$state.go("categories")
+		$state.go("medications", {value: value});
 	}	
 
 	$scope.getWeightMetric = function(){
-		return $scope.isUS ? "lbs" : "kgs"
+    if($scope.isUs === 'US') return 'lbs';
+    else return 'kgs';
 	}
 });
 

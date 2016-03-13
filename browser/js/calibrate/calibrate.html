@@ -1,35 +1,35 @@
 <section class="calibrate container-fluid" layout-align="center center" id="popupContainer">
-	<div class="another-box" layout-fill>
-	</div>
+	<md-card layout-align="center center" layout-fill layout="column">
 		<h1>Calibrate Measuring Device</h1>
-	<div class="buttons" ng-hide="status === 'creditCard'">
-			<md-button class="md-raised md-primary" ng-click="showPrompt()">New Object</md-button>
-			<md-button class="md-raised md-primary" ng-click="showAlert()">Load Saved</md-button>
-	</div>
-
-	<section ng-show="status === 'creditCard'">
-		<div class="buttons">
-			<md-button class="md-raised md-primary" ng-if="selectPicture" ng-click="startCamera()">Take Picture</md-button>
-
-			<md-button class="md-raised md-primary">
-			    <label for="file_input">Load Picture</label>
-			    <input type="file" id="file_input" ng-click="initUpload()" class="hidden" name="upload">
-			</md-button>
-
-			<md-button class="md-raised md-primary buttons" ng-if="!selectPicture" ng-click="analyzeAutomatically()">Analyze Automatically</md-button>
-			<md-progress-circular md-mode="indeterminate" class="buttons" ng-if="analyze"></md-progress-circular>
+		<div class="buttons" ng-hide="status === 'creditCard'">
+				<md-button class="md-raised md-primary" ng-click="showPrompt()">New Object</md-button>
+				<md-button class="md-raised md-primary" ng-click="showAlert()">Load Saved</md-button>
 		</div>
 
-		<div layout="row" layout-sm="column" layout-align="space-around" ng-if="showLoader">
-		  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-		</div>
-		
-		<div class="canvas-div">
-			<canvas id="canvas" ng-class="{crosshair: !selectPicture}" ng-click="colorSelected($event)"></canvas>
-			<div class="color-swatch canvas-div" ng-style="backgroundColor">
-				Selected Color
+		<section ng-show="status === 'creditCard'">
+			<div class="buttons">
+				<md-button class="md-raised md-primary" ng-if="selectPicture" ng-click="startCamera()">Take Picture</md-button>
+
+				<md-button class="md-raised md-primary">
+				    <label for="file_input">Load Picture</label>
+				    <input type="file" id="file_input" ng-click="initUpload()" class="hidden" name="upload">
+				</md-button>
+
+				<md-button class="md-raised md-primary buttons" ng-if="!selectPicture" ng-click="analyzeAutomatically()">Analyze Automatically</md-button>
+				<md-progress-circular md-mode="indeterminate" class="buttons" ng-if="analyze"></md-progress-circular>
 			</div>
-		</div>
-		<video id="MediaStreamVideo" ng-class="{'hidden': !!hide}"></video>
-	</section>
+
+			<div layout="row" layout-sm="column" layout-align="space-around" ng-if="showLoader">
+			  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+			</div>
+			
+			<div class="canvas-div" layout-align="center center" layout="row">
+				<canvas id="canvas" ng-class="{crosshair: !selectPicture}" ng-click="colorSelected($event)"></canvas>
+				<div class="color-swatch canvas-div" ng-style="backgroundColor">
+					Selected Color
+				</div>
+			</div>
+			<video id="MediaStreamVideo" ng-class="{'hidden': !!hide}"></video>
+		</section>
+	</md-card>
 </section>
