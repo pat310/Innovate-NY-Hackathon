@@ -17,6 +17,8 @@
 	}
 
 	#canvas{
+		margin: -200px 0 0 -200px;
+		left: 50%;
 		top: 70%;
 		position: absolute;
 		display: block;
@@ -29,6 +31,16 @@
 	}
   .hidden{
     display: none;
+  }
+
+  .md-raised > label {
+    display: inline;
+    max-width: none;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    color: rgba(255,255,255,0.87);
   }
 
 }
