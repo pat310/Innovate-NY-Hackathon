@@ -3,7 +3,6 @@
     <md-tabs md-dynamic-height md-border-bottom>
       <md-tab label="Dosage">
         <md-content class="md-padding" layout-align="center center">
-<<<<<<< HEAD
           <h1 class="md-display-2">{{medication.name}}: DOSE: ADD DOSE</h1>
           <table class="table" flex>
             <thead>
@@ -59,7 +58,7 @@
                   <td>{{ medication.name }}</td>
                   <td>{{ medication.concentration }} {{medication.doseUnit}}/mL</td>
                   <td>{{ medication.dosage }} {{ medication.doseUnit }}/kg</td>
-                  <td>ADD DOSE</td>
+                  <td>{{patientDose[0]}}{{medication.doseUnit}} ({{patientDose[1]}})</td>
                   <td>
                     {{formatDate(date)}}
                   </td>
