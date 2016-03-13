@@ -5,19 +5,28 @@
     color: darken(#585858, 20%);
     font-weight: 600;
     text-align: center;
+    padding-bottom: 10px;
   }
 
   .layout-fill{
-    background: #71AFAD;
+    background: lighten(#71AFAD, 15%);
+    text-align: center;
   }
 
+  .layout-row{
+    text-align: center;
+  }
   .search-form{
     width: 80%;
     display: inline-block;
     vertical-align: middle;
   }
 
+  .select{
+    padding-top: 25px;
+  }
   .md-whiteframe-1dp{
+    text-align: center;
     background: lighten(#C1E2A3, 10%);
     span{
       color: darken(#585858, 10%);
@@ -28,7 +37,8 @@
     vertical-align: middle;
     text-align: center;
     display: inline-block;
-    background: #71AFAD;
+    background: lighten(#71AFAD, 15%);
+    padding-bottom: 30px;
   }
 
   .category-text {

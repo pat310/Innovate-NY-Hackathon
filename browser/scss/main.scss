@@ -4,12 +4,8 @@
 
 body {
   height: 100%;
-  background: #71AFAD;
+  background: lighten(#71AFAD, 15%);
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-footer{
-  background: #ECECEA;
 }
 
 @mixin clearfix {
@@ -27,6 +23,7 @@ footer{
 
 .container-fluid{
   width: 80%;
+  text-align: center;
 }
 
 @import 'directives/main';
