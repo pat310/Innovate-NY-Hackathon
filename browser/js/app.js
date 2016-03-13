@@ -5,7 +5,8 @@ window.app = angular.module('InnovateNYP', [
   'ui.bootstrap', 
   'ngAnimate',
   'ngMaterial',
-  'ngMdIcons'
+  'ngMdIcons',
+  'angularMoment'
 ]);
 
 angular.module('InnovateNYP')

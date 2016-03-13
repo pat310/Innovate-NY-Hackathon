@@ -4,6 +4,14 @@
 	.crosshair{
 		cursor: crosshair;
 	}
+  h1{
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    color: darken(#585858, 10%);
+  }
 
 	.color-swatch{
 		width: 60px;
@@ -33,6 +41,10 @@
     display: none;
   }
 
+  md-card{
+    min-height: 400px;
+  }
+
   .md-raised > label {
     display: inline;
     max-width: none;
@@ -43,9 +55,4 @@
     color: rgba(255,255,255,0.87);
   }
 
-}
-
-.container-fluid{
-  width: 80%;
-	text-align: center;
 }

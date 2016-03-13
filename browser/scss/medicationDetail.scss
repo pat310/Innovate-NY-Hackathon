@@ -21,31 +21,18 @@
     text-align: center;
   }
 
+  .instructions {
+    vertical-align: middle;
+  }
+
+  .description{
+    text-transform: none;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 0;
+  }
+
   .dose{
     color: red;
   }
 }
-
-//big RED letter
-
-
-// md-card.bg-white.block.padding15(layout="row", layout-padding)
-//             h1.visitor-signin-title {{listing.street}}
-//               md-button.btn-block.md-accent.md-raised.md-hue-1.login(type="submit", ng-click='showForm($event)', class='visitor-signin', layout-align='right right') Sign In
-            
-//             table.table(flex)
-//               thead
-//                 tr
-//                   th Name
-//                   th Email
-//                   th Phone
-//                   th Agent Name
-//                   th Date
-
-//               tbody(ng-repeat='visitor in listing.visitors')
-//                 tr(ng-dblclick="showForm($event, visitor, true)")
-//                   td {{ visitor.name }}
-//                   td ****
-//                   td ***-***-****
-//                   td {{ visitor.agent || 'No Agent' }}
-//                   td {{ formatDate(visitor.date) }}
