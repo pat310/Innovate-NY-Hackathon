@@ -3,6 +3,7 @@
 angular.module('InnovateNYP')
 .controller('MedicationListCtrl', function($scope, Medication, $mdDialog, category, $state, Calculation){
   $scope.category = category.name;
+  $scope.summary = [];
 
   Medication.getByUse(category.url)
   .then(function(medications){
@@ -14,9 +15,22 @@ angular.module('InnovateNYP')
   	});
   });
 
+  $scope.addToSummary = function(medication){
+    $scope.summary.push(medication);
+  }
+
   $scope.goToDetailed = function(medication){
     $mdDialog.cancel();
     $state.go('medDetails', {id: medication._id});
+  }
+
+  $scope.goToSummary = function(){
+    $mdDialog.cancel();
+    $state.go('medDetails', {id: medication._id, summary: $scope.summary});
+  }
+
+  $scope.close = function(){
+    $mdDialog.cancel();
   }
 })
 
