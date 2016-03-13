@@ -1,4 +1,16 @@
-#Innovate-NY-Hackathon
+#SnapDose
+###Built for the InnovateNYP Appathon. 
+SnapDose is a mobile app for pediatric providers. SnapDose makes weight estimation and weight based dosing seamless and intuitive. The goal of SnapDose was to reduce medication errors and under/overdosing pediatric patients, particularly in outpatient areas where accurate weights may not be readily available and emergencies are uncommon. 
+
+## Installation
+`npm install`
+`npm start`
+seperate terminal: `gulp`
+
+## Usage
+To estimate the weight of a patient using the camera function take a picture of the patient laying supine centered in the picture with a credit card next to the patient. 
+Select a care area.
+Click on the medication as it is given and it will be time stamped and stored in the flow sheet for later documentation.
 
 ---
 
