@@ -7,10 +7,10 @@ angular.module('InnovateNYP')
   Medication.categories = [
     { name: 'Cardiac Arrest', url: 'cardiacArrest' },
     { name: 'Dysrhythmia', url: 'dysrhythmia' },
-    { name: 'Critical Care / General', url: 'criticalCare' },
+    { name: 'Critical Care / ED', url: 'criticalCare_ed' },
     { name: 'RSI', url: 'RSI' },
-    { name: 'Seizure', url: 'seizure' },
-    { name: 'Sedation', url: 'sedation' },
+    { name: 'Seizure/Neuro', url: 'seizure_neuro' },
+    { name: 'Sedation/Analgesia', url: 'sedation_analgesia' },
     { name: 'Pressor', url: 'pressor' },
     { name: 'Frequently Used', url: 'frequent' }
   ];
