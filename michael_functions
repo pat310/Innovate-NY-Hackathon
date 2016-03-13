@@ -1,0 +1,8 @@
+function heightToWeight (heightIN)
+var heightCM = heightIN * 2.54;
+var weight;
+if (heightCM < 90){
+	return weight = -8.577 * 0.241*heightCM;
+} else {
+	return weight = 2.322*2.718^(0.019*heightCM);
+}
