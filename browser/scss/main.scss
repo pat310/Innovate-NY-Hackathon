@@ -3,7 +3,9 @@
 }
 
 body {
-  background: #fdfdfd;
+  height: 100%;
+  background: lighten(#71AFAD, 15%);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 @mixin clearfix {
@@ -15,8 +17,13 @@ body {
 }
 
 #main {
-  padding-top: 60px;
+  padding-top: 30px;
   margin: 0 auto;
+}
+
+.container-fluid{
+  width: 80%;
+  text-align: center;
 }
 
 @import 'directives/main';
@@ -26,3 +33,7 @@ body {
 @import 'login/main';
 @import 'categories';
 @import 'medicationList';
+@import 'calibrate';
+@import 'tracking';
+@import 'patientCenter';
+@import 'medicationDetail';

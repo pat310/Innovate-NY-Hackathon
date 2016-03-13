@@ -1,0 +1,17 @@
+<section class="tracking container-fluid" layout-align="center center" id="popupContainer">
+	<h1>Height Approximation</h1>
+	<md-button class="md-raised md-primary" ng-click="showAlert()">Take Picture</md-button>
+	<md-button class="md-raised md-primary">
+	    <label for="file_input">Load Picture</label>
+	    <input type="file" id="file_input" ng-click="initUpload()" class="hidden" name="upload">
+	</md-button>
+
+	<div class="image-container">
+	  <img id="img" ng-src="{{imageSource}}" />
+	</div>
+	<video id="MediaStreamVideo" ng-class="{'hidden': !!hide}"></video>
+
+	<div layout="row" layout-sm="column" layout-align="space-around" ng-if="showLoader">
+	  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+	</div>
+</section>

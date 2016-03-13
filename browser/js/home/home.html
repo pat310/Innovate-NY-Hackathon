@@ -1,9 +1,63 @@
-<md-input-container layout="row">
-	<md-content>Units in: </md-content>
-  <md-switch ng-model="isUS"> {{isUS ? "US" : "SI"}}</md-switch>
-</md-input-container>   
+<section id="home" class="container-fluid" layout-align="center center">
+  <md-content layout-align="center center" layout-fill layout="column">
+    <div layout-align="center center">
+      <h2 class="subtitle">Select Units:</h2>
+      <md-button class="md-raised md-primary" ng-click="toggleUnits('US')" ng-class="{active: isUs == 'US'}">US</md-button>
+      <md-button class="md-raised md-primary" ng-click="toggleUnits('SI')" ng-class="{active: isUs == 'SI'}">SI</md-button>
+    </div>
+    
+    <div layout-lg="column">
+    <div layout-align="center center" layout-sm="column">
+      <h2 class="subtitle">Enter Weight:</h2>
+        <md-input-container md-no-float layout-align="center center">
+          <input ng-model="weight" 
+                 placeholder="Weight ({{getWeightMetric()}})"
+                 type="number"/>
+          <md-button class="md-raised md-secondary" ng-click="submitMetric('weight', weight)">Enter</md-button>
+        </md-input-container>
+    </div>
 
-<md-content>
+    <div layout="row" layout-align="center center">
+      <h4>OR</h4>
+    </div>
+
+    <div layout-align="center center" layout-sm="column">
+      <h2 class="subtitle">Enter Age:</h2>
+      <md-input-container md-no-float layout-align="center center" layout="row">
+        <input ng-model="age" 
+                 placeholder="Age ({{isMonths ? 'months' : 'years'}})"
+                 type="number"/>
+      </md-input-container>
+      <div layout="row" layout-align="center center">
+      <md-button class="md-raised md-secondary" ng-click="submitMetric('age', age)">Enter</md-button>
+      <md-switch ng-model="isMonths" aria-label="Switch 1">
+        {{isMonths ? "months" : "years"}}
+      </md-switch>
+    </div>
+    </div>
+  </div>
+
+    <div layout="row" layout-align="center center">
+      <h4>OR</h4>
+    </div>
+
+    <div layout-align="center center">
+     <h2 class="subtitle">Calculate Weight:</h2>
+      <div layout="row" layout-align="center center">
+        <md-button>
+          <ng-md-icon icon="photo_camera" size="48px"></ng-md-icon>
+        </md-button>
+      </div>  
+      </div>
+  </md-content>
+</section>
+
+<!-- 
+
+
+
+
+<md-content id="home">
   <md-list>
   	<div layout="row" layout-align="center center">
 		  <h2>Enter Weight</h2>
@@ -52,4 +106,4 @@
 			</md-button>
 		</div>			 
   </md-list>
-</md-content>
+</md-content> -->
