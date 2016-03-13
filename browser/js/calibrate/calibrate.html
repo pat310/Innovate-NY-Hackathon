@@ -1,14 +1,27 @@
-<md-button class="md-raised md-primary" ng-if="selectPicture">Take Picture</md-button>
-<md-button class="md-raised md-primary" ng-click="loadPicture()" ng-if="selectPicture">Load Picture</md-button>
+<section class="calibrate container-fluid" layout-align="center center">
+	<div class="buttons">
+		<md-button class="md-raised md-primary" ng-if="selectPicture">Take Picture</md-button>
 
-<md-button class="md-raised md-primary" ng-if="!selectPicture" ng-click="analyzeAutomatically()">Analyze Automatically</md-button>
+		<md-button class="md-raised md-primary">
+		    <label for="file_input">Load Picture</label>
+		    <input type="file" id="file_input" ng-click="initUpload()" class="hidden" name="upload">
+		</md-button>
 
-<div layout="row" layout-sm="column" layout-align="space-around" ng-if="showLoader">
-  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-</div>
-<canvas id="canvas" ng-class="{crosshair: !selectPicture}" ng-click="colorSelected($event)"></canvas>
-<div ng-if="!selectPicture">
-	Selected Color:
-	<div class="color-swatch" ng-style="backgroundColor">
+	
+		<md-button class="md-raised md-primary buttons" ng-if="!selectPicture" ng-click="analyzeAutomatically()">Analyze Automatically</md-button>
+		<md-progress-circular md-mode="indeterminate" class="buttons" ng-if="analyze"></md-progress-circular>
 	</div>
-</div>
+
+	<div layout="row" layout-sm="column" layout-align="space-around" ng-if="showLoader">
+	  <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+	</div>
+	
+	<div class="canvas-div">
+		<canvas id="canvas" ng-class="{crosshair: !selectPicture}" ng-click="colorSelected($event)"></canvas>
+		<div class="color-swatch canvas-div" ng-style="backgroundColor">
+			Selected Color
+		</div>
+	</div>
+	<div ng-if="!selectPicture">
+	</div>
+</section>

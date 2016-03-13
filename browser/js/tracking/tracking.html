@@ -1,5 +1,8 @@
-<md-button class="md-raised md-primary">Take Picture</md-button>
-<md-button class="md-raised md-primary" ng-click="loadPicture()">Load Picture</md-button>
+<md-button class="md-raised md-primary" type="file">Take Picture</md-button>
+<md-button class="md-raised md-primary">
+    <label for="file_input">Load Picture</label>
+    <input type="file" id="file_input" ng-click="initUpload()" class="hidden" name="upload">
+</md-button>
 
 <div class="image-container">
   <img id="img" ng-src="{{imageSource}}" />
